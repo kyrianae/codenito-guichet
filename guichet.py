@@ -12,14 +12,15 @@ if "PIZZAIOLO" in os.environ:
     
 @app.route('/hello', methods=['GET'])
 def hello():
-    return "Hello World\n"
+    return "Guicher says: Hello World\n"
 
 @app.route('/pizza', methods=['GET'])
 def pizza():
-    print ("Guichet\tpizza asked")
+    print ("Guichet\customer asked pizza")
     x = requests.get(pizzaiolo+"/make_pizza")
-    
-    return x.text+"\nGuichet\tJob Done\n"
+    print (x.text)
+    print ("Guichet\tPizza delivered")
+    return x.text+"\nGuichet\tPizza delivered\n"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8081)
