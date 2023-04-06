@@ -25,7 +25,7 @@ def pizza():
     print (str_now()+"\t"+"Guicher calls: "+url)
     x = requests.get(url)
     print (x.text)
-    print (str_now()+"\t"+"Guichet\t\tPizza delivered")
+    print (str_now()+"<\br>"+"Guichet\t\tPizza delivered")
     return x.text+"\n"+str_now()+"\t"+"Guichet\t\tPizza delivered\n"
 
 if __name__ == '__main__':
